@@ -1,0 +1,17 @@
+@import "modular-scale";
+// see https://github.com/ericam/susy/blob/master/docs/source/stylesheets/_base/_size.scss
+// and https://github.com/ericam/andmeyer/blob/master/sass/base/_sizes.scss
+
+$base-size: 18px;
+$ratio: major-third() fifth();
+
+$normpx: $base-size;
+$medpx: ms(1);
+$smallpx: ms(-1);
+$xsmallpx: ms(-2);
+$xxsmallpx: ms(-3);
+$xxxsmallpx: ms(-4);
+$largepx: ms(2);
+$xlargepx: ms(3);
+$xxlargepx: ms(4);
+$xxxlargepx: ms(6);

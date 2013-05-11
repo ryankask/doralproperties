@@ -1,0 +1,22 @@
+h1 {
+  @include adjust-font-size-to($xxlargepx);
+  @include at-breakpoint($total-columns) { @include adjust-font-size-to($xxxlargepx); }
+}
+
+h2 {
+  @include adjust-font-size-to($xlargepx);
+  @include at-breakpoint($total-columns) { @include adjust-font-size-to($xxlargepx); }
+}
+
+h3 {
+  @include adjust-font-size-to($largepx);
+  @include at-breakpoint($total-columns) { @include adjust-font-size-to($xlargepx); }
+}
+
+h4 {
+  @include adjust-font-size-to($medpx);
+}
+
+strong { font-weight: bold; }
+em { font-style: italic; }
+p, ul, ol, pre { @include trailer; }

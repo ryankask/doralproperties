@@ -1,0 +1,13 @@
+// Project settings
+
+// Type
+@import "sizes";
+$base-font-size: $normpx;
+$base-line-height: $medpx;
+
+// Grid
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: 1em;
+$grid-padding: $gutter-width;
+$show-grid-backgrounds: true;
