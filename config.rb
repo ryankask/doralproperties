@@ -7,4 +7,4 @@ css_dir = "app/static/css"
 images_dir = "app/static/images"
 javascripts_dir = "app/static/js"
 
-output_style = :compact #:compressed
+output_style = :compressed
