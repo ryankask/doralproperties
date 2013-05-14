@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-CD_PROJECT="cd ~/Projects/doralproperties/"
+WORKON="workon doral-properties"
 
 tmux new-session -d -s doral
 
 tmux rename-window -t doral:1 'work'
 tmux new-window -t doral:2 -n 'watch'
 
-tmux send-keys -t doral:1 "$CD_PROJECT" C-m
-tmux send-keys -t doral:2 "$CD_PROJECT" C-m 'compass watch' C-m
+tmux send-keys -t doral:1 "$WORKON" C-m
+tmux send-keys -t doral:2 "$WORKON" C-m "compass watch" C-m
 
 tmux select-window -t doral:1
 tmux attach-session -t doral
