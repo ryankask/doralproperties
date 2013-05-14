@@ -38,6 +38,8 @@ header {
 nav {
   ul {
     text-align: center;
+    font-family: $heading-font-family;
+
     @include adjust-font-size-to($medpx);
     @include inline-block-list;
   }
@@ -47,6 +49,23 @@ nav {
 
 [role=main] {
   @include trailer;
+
+  .caption-wrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .caption {
+    background-color: $caption-bg-color;
+    display: inline-block;
+    padding: 1em;
+
+    img {
+      display: block;
+      width: 100%;
+      @include trailer;
+    }
+  }
 }
 
 @include at-breakpoint($break) {

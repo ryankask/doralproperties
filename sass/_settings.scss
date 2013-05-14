@@ -1,8 +1,5 @@
 // Project settings
 
-// Colors
-$blue: #01127a;
-
 // Type
 @import "sizes";
 $heading-font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -10,6 +7,8 @@ $body-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
 $body-font-color: tint(#000, 20%);
 $base-font-size: $normpx;
 $base-line-height: $medpx;
+$link-color: #01127a;
+$caption-bg-color: #cdcdcd;
 
 // Grid
 $total-columns: 6;
