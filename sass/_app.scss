@@ -23,6 +23,11 @@ body {
 
 header {
   text-align: center;
+
+  .logo {
+    @include trailer;
+  }
+
   h2 {
     @include adjust-font-size-to($normpx);
   }
@@ -52,6 +57,7 @@ nav {
     .logo {
       @include span-columns(8, $break-columns);
       text-align: left;
+      margin-bottom: 0;
 
       img, .hgroup {
         vertical-align: middle;
