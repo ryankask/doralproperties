@@ -1,5 +1,5 @@
 @import "compass/reset";
-@import "compass/typography/lists/inline-block-list";
+@import "compass/css3/border-radius";
 @import "compass/typography/vertical_rhythm";
 @import "susy";
 @import "fonts";
@@ -24,10 +24,6 @@ body {
 header {
   text-align: center;
 
-  .logo {
-    @include trailer;
-  }
-
   h1 {
     font-weight: bold;
   }
@@ -40,12 +36,22 @@ header {
 }
 
 nav {
-  ul {
-    text-align: center;
-    font-family: $heading-font-family;
+  background-color: $nav-bg-color;
+  @include border-radius($border-radius);
 
+  ul {
     @include adjust-font-size-to($medpx);
-    @include inline-block-list;
+    font-family: $heading-font-family;
+    overflow: hidden;
+
+    a {
+      display: block;
+      padding: 0 1em;
+
+      &:hover, &.on {
+        background-color: tint($nav-bg-color, 50%);
+      }
+    }
   }
 
   @include trailer;
@@ -65,6 +71,7 @@ nav {
 
   .caption {
     background-color: $caption-bg-color;
+    @include border-radius($border-radius);
     display: inline-block;
     padding: 1em;
 
@@ -84,41 +91,25 @@ nav {
   header {
     overflow: hidden;
     position: relative;
+    text-align: left;
     white-space: nowrap;
 
-    .logo {
-      @include span-columns(8, $break-columns);
-      text-align: left;
-      margin-bottom: 0;
-
-      h1, h2 {
-        margin-left: 5px;
-      }
-
-      img, .hgroup {
-        vertical-align: middle;
-        display: inline-block;
-      }
+    h1, h2 {
+      margin-left: 5px;
     }
 
-    nav {
-      @include span-columns(4 omega, $break-columns);
-      height: 100%;
-      position: absolute;
-      margin-bottom: 0;
-      right: 0;
-
-      ul {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
+    img, .hgroup {
+      vertical-align: middle;
+      display: inline-block;
     }
   }
 
-  [role=main] {
-    clear: both;
+  nav li {
+    float: left;
+    border-right: 2px solid tint($nav-bg-color, 40%);
+  }
 
+  [role=main] {
     .intro {
       @include span-columns(5, $break-columns);
     }

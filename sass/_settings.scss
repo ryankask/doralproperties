@@ -8,7 +8,11 @@ $body-font-color: tint(#000, 20%);
 $base-font-size: $normpx;
 $base-line-height: $medpx;
 $link-color: #01127a;
-$caption-bg-color: #cdcdcd;
+$nav-bg-color: #cdcdcd;
+$caption-bg-color: $nav-bg-color;
+
+// Borders
+$border-radius: 4px 4px;
 
 // Grid
 $total-columns: 6;
