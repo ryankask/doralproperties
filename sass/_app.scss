@@ -28,6 +28,10 @@ header {
     @include trailer;
   }
 
+  h1 {
+    font-weight: bold;
+  }
+
   h2 {
     @include adjust-font-size-to($normpx);
   }
@@ -86,6 +90,10 @@ nav {
       @include span-columns(8, $break-columns);
       text-align: left;
       margin-bottom: 0;
+
+      h1, h2 {
+        margin-left: 5px;
+      }
 
       img, .hgroup {
         vertical-align: middle;
