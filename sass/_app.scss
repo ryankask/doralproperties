@@ -24,7 +24,7 @@ body {
 header {
   text-align: center;
   h2 {
-    @include adjust-font-size-to($smallpx);
+    @include adjust-font-size-to($normpx);
   }
 
   @include trailer;
