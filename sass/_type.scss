@@ -17,6 +17,14 @@ h4 {
   @include adjust-font-size-to($medpx);
 }
 
+a {
+  color: $blue;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
 strong { font-weight: bold; }
 em { font-style: italic; }
 p, ul, ol, pre { @include trailer; }

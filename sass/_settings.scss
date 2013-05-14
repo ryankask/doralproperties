@@ -1,13 +1,16 @@
 // Project settings
 
+// Colors
+$blue: #01127a;
+
 // Type
 @import "sizes";
+$font-face: Arial, Helvetica, sans-serif;
 $base-font-size: $normpx;
 $base-line-height: $medpx;
 
 // Grid
-$total-columns: 12;
-$column-width: 4em;
-$gutter-width: 1em;
-$grid-padding: $gutter-width;
+$total-columns: 6;
+$break-columns: 12;
+$break: 600px 12;
 $show-grid-backgrounds: true;

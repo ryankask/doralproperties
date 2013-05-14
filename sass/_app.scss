@@ -1,4 +1,5 @@
 @import "compass/reset";
+@import "compass/typography/lists/inline-block-list";
 @import "compass/typography/vertical_rhythm";
 @import "susy";
 @import "type";
@@ -7,6 +8,75 @@
 @include border-box-sizing;
 
 body {
+  font-family: $font-face;
+
   @include container;
-  //@include susy-grid-background;
+  @include susy-grid-background;
+
+  @include at-breakpoint($break) {
+    @include set-container-width;
+    @include susy-grid-background;
+  }
+}
+
+header {
+  text-align: center;
+  h2 {
+    @include adjust-font-size-to($smallpx);
+  }
+
+  @include trailer;
+}
+
+nav {
+  ul {
+    text-align: center;
+    @include inline-block-list;
+  }
+
+  @include trailer;
+}
+
+[role=main] {
+  @include trailer;
+}
+
+@include at-breakpoint($break) {
+  header {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+
+    .logo {
+      @include span-columns(8, $break-columns);
+      text-align: left;
+
+      img, .hgroup {
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
+
+    nav {
+      @include span-columns(4 omega, $break-columns);
+      height: 100%;
+      position: absolute;
+      margin-bottom: 0;
+      right: 0;
+
+      ul {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  [role=main] {
+    clear: both;
+  }
+}
+
+footer {
+  @include adjust-font-size-to($smallpx);
 }
