@@ -2,13 +2,14 @@
 @import "compass/typography/lists/inline-block-list";
 @import "compass/typography/vertical_rhythm";
 @import "susy";
+@import "fonts";
 @import "type";
 
 @include establish-baseline;
 @include border-box-sizing;
 
 body {
-  font-family: $font-face;
+  font-family: $body-font-family;
 
   @include container;
   @include susy-grid-background;

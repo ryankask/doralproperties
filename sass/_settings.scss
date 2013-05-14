@@ -5,7 +5,8 @@ $blue: #01127a;
 
 // Type
 @import "sizes";
-$font-face: Arial, Helvetica, sans-serif;
+$heading-font-family: Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+$body-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
 $base-font-size: $normpx;
 $base-line-height: $medpx;
 

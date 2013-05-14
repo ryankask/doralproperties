@@ -1,3 +1,7 @@
+h1, h2, h3, h4 {
+  font-family: $heading-font-family;
+}
+
 h1 {
   @include adjust-font-size-to($xxlargepx);
   @include at-breakpoint($total-columns) { @include adjust-font-size-to($xxxlargepx); }
