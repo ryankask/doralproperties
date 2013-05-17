@@ -48,6 +48,7 @@ nav {
     a {
       display: block;
       padding: 0 1em;
+      text-decoration: none;
 
       &:hover, &.on {
         background-color: tint($nav-bg-color, 50%);
