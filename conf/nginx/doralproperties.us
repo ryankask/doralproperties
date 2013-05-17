@@ -3,10 +3,9 @@ server {
     listen [::]:80 default_server ipv6only=on;
 
     root /home/deploy/apps/doralproperties/app;
-    index index.html;
     server_name doralproperties.us;
 
-    location / {
+    location ~ ^/(page/\w+/?)?$ {
         try_files $uri $uri/ /index.html;
     }
 }
