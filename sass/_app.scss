@@ -23,6 +23,7 @@ body {
 
 header {
   text-align: center;
+  margin-top: 2%;
 
   h1 {
     font-weight: bold;
@@ -93,6 +94,10 @@ nav {
     position: relative;
     text-align: left;
     white-space: nowrap;
+
+    .hgroup {
+      margin-left: 12px;
+    }
 
     h1, h2 {
       margin-left: 5px;
