@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet">
   </head>
-  <body>
+  <body ng-app="doralProperties">
     <header>
       <a href="/"><img src="/static/images/logo/small.jpg" alt="Doral Properties logo"></a>
       <div class="hgroup">
@@ -21,32 +21,20 @@
     </header>
     <nav>
       <ul>
-        <li><a class="on" href="/about">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/properties">Properties</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/social">Social</a></li>
+        <li><a class="on" href="/">Home</a></li>
+        <li><a href="/page/about">About</a></li>
+        <li><a href="/page/properties">Properties</a></li>
+        <li><a href="/page/services">Services</a></li>
+        <li><a href="/page/social">Social</a></li>
       </ul>
     </nav>
-    <div role="main">
-      <div class="caption-wrapper">
-        <div class="caption">
-          <img src="/static/images/properties/9690.jpg" alt="9690">
-          <a href="http://www.doral9690.com">Doral 9690 Plaza</a> - Under construction
-        </div>
-      </div>
-      <div class="intro">
-        Doral Properties Real Estate is the premiere bespoke development company in Doral, Florida.
-        Florida. Founded in 1983 by William Kaskel, the company's knowledge of the Doral area
-        predates the city's fonding its construction experience is second to none.
-      </div>
-      <div class="video">
-        <iframe width="430" height="242" allowfullscreen frameborder="0" src="http://www.youtube.com/embed/60DofpEzi4c?list=UUoK6w4O6kB5tQmJHAPKRQGw"></iframe>
-      </div>
-    </div>
+    <div role="main" ng-view></div>
     <footer>
       © 2013 Doral Properties, Inc.
     </footer>
+
+    <script src="/static/js/vendor/angular-1.0.6.min.js"></script>
+    <script src="/static/js/app.js"></script>
 
     <!-- <script> -->
     <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
