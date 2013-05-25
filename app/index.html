@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet">
   </head>
-  <body ng-app="doralProperties">
+  <body ng-app="doralProperties" ng-controller="AppCtrl">
     <header>
       <a href="/"><img src="/static/images/logo/small.jpg" width="84" height="90"
                        alt="Doral Properties logo"></a>
@@ -21,8 +21,8 @@
       </div>
     </header>
     <nav>
-      <ul>
-        <li><a class="on" href="/">Home</a></li>
+      <ul dp-nav-menu>
+        <li><a href="/">Home</a></li>
         <li><a href="/page/about">About</a></li>
         <li><a href="/page/properties">Properties</a></li>
         <li><a href="/page/services">Services</a></li>
@@ -36,6 +36,8 @@
 
     <script src="/static/js/vendor/angular-1.0.6.min.js"></script>
     <script src="/static/js/app.js"></script>
+    <script src="/static/js/controllers.js"></script>
+    <script src="/static/js/directives.js"></script>
 
     <!-- <script> -->
     <!--   var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; -->
