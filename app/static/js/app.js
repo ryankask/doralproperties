@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  var deps = ['doralProperties.controllers', 'doralProperties.directives'],
-      app = angular.module('doralProperties', deps);
+  var deps = ['doralProps.controllers', 'doralProps.directives'],
+      app = angular.module('doralProps', deps);
 
   app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when('/page/about', {

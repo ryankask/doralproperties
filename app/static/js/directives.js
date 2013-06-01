@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var directives = angular.module('doralProperties.directives', []);
+  var directives = angular.module('doralProps.directives', []);
 
   directives.directive('dpNavMenu', function($location) {
     return function(scope, element, attrs) {
