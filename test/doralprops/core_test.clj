@@ -1,6 +1,6 @@
-(ns doralproperties.core-test
+(ns doralprops.core-test
   (:use clojure.test
-        doralproperties.core
+        doralprops.core
         [ring.mock.request :only [request]]))
 
 (deftest handler-without-escaped-fragment

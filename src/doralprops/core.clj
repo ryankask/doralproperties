@@ -1,4 +1,4 @@
-(ns doralproperties.core
+(ns doralprops.core
   (:require [ring.util.response :as response]
             [ring.adapter.jetty :as jetty])
   (:use [ring.middleware.params :only [wrap-params]]))
