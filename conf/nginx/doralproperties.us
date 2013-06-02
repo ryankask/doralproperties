@@ -5,15 +5,13 @@ server {
     root /home/deploy/apps/doralproperties/app;
     server_name doralproperties.us;
 
-    location = / {
+    location ~ ^/(page/\w+/?)?$ {
         include proxy_params;
 
         if ($args ~ "_escaped_fragment_=") {
             proxy_pass http://localhost:8088;
         }
-    }
 
-    location ~ ^/page/\w+/?$ {
         try_files $uri $uri/ /index.html;
     }
 }
