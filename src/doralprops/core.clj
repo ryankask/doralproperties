@@ -1,20 +1,47 @@
 (ns doralprops.core
   (:require [ring.util.response :as response]
-            [ring.adapter.jetty :as jetty])
+            [ring.adapter.jetty :as jetty]
+            [clojure.java.io :as io]
+            [me.raynes.laser :as laser])
   (:use [ring.middleware.params :only [wrap-params]]))
 
 (def ^:const target-param "_escaped_fragment_")
+(def ^:const path-partials {"" "home.html"})
+(def ^:const index "index.html")
+(def ^:const partials-dir "partials")
 (def ^:const body-404 "<h1>404 Not found</h1>")
+
+(defn set-inner-html [template fragment]
+  (let [parsed-template (laser/parse template)
+        main-div-sel (laser/attr= "role" "main")
+        content (laser/content (laser/parse-fragment fragment))]
+    (laser/document parsed-template main-div-sel content)))
+
+(defn get-partial-path [public-path]
+  (.getPath (io/file partials-dir
+                     (or (path-partials public-path)
+                         (str (.getName (io/file public-path)) ".html")))))
+
+(defn render [escaped-fragment]
+  (if-let [sub-template (io/resource (get-partial-path escaped-fragment))]
+    (set-inner-html (io/resource index) sub-template)))
 
 (defn handler [request]
   (if-let [escaped-fragment (get (:query-params request) target-param)]
-    (-> (response/response escaped-fragment)
-        (response/header "Content-Type" "text/html"))
-    (response/not-found body-404)))
+    (if-let [rendered-html (render escaped-fragment)]
+      (-> (response/response rendered-html)
+          (response/header "Content-Type" "text/html")))))
+
+(defn wrap-error [handler]
+  (fn [request]
+    (if-let [response (handler request)]
+      response
+      (response/not-found body-404))))
 
 (def app
   (-> handler
-      wrap-params))
+      wrap-params
+      wrap-error))
 
 (defn -main []
   (jetty/run-jetty app {:port 8000 :join? false}))
