@@ -30,7 +30,7 @@
   (if (= ((:query-params request) target-param) "")
     (if-let [rendered-html (render (:uri request))]
      (-> (response/response rendered-html)
-          (response/header "Content-Type" "text/html")))))
+         (response/header "Content-Type" "text/html")))))
 
 (defn wrap-error [handler]
   (fn [request]
@@ -44,4 +44,4 @@
       wrap-error))
 
 (defn -main []
-  (jetty/run-jetty app {:port 8000 :join? false}))
+  (defonce server (jetty/run-jetty app {:port 8088 :join? false})))
