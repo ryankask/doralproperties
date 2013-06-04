@@ -61,6 +61,7 @@ nav {
 
 [role=main] {
   @include trailer;
+  overflow: hidden;
 
   > div {
     @include trailer;
