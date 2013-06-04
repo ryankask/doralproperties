@@ -88,6 +88,16 @@ nav {
   .video {
     text-align: center;
   }
+
+  .property-location {
+    @include leader;
+    @include trailer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @include at-breakpoint($break) {
@@ -123,6 +133,11 @@ nav {
 
     .video {
       @include span-columns(5 omega, $break-columns);
+    }
+
+    .property-location {
+      float: right;
+      margin: 0 0 0 1em;
     }
   }
 }
