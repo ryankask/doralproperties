@@ -39,11 +39,12 @@ header {
 nav {
   background-color: $nav-bg-color;
   @include border-radius($border-radius);
+  // required so border radius clips the "on" link's background color
+  overflow: hidden;
 
   ul {
     @include adjust-font-size-to($medpx);
     font-family: $heading-font-family;
-    overflow: hidden;
 
     a {
       display: block;
