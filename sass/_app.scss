@@ -68,26 +68,18 @@ nav {
     @include trailer;
   }
 
-  .caption-wrapper {
-    width: 100%;
-    text-align: center;
-  }
-
   .caption {
     background-color: $caption-bg-color;
     @include border-radius($border-radius);
     display: inline-block;
     padding: 1em;
+    text-align: center;
 
     img {
       display: block;
       width: 100%;
       @include trailer;
     }
-  }
-
-  .video {
-    text-align: center;
   }
 
   .property-location {
@@ -128,11 +120,11 @@ nav {
   }
 
   [role=main] {
-    .intro {
+    .intro-left {
       @include span-columns(5, $break-columns);
     }
 
-    .video {
+    .intro-right {
       @include span-columns(5 omega, $break-columns);
     }
 
