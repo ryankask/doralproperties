@@ -32,4 +32,4 @@
 (deftest uri-partials-inspected-for-special-partial-paths
   (let [response (app (request :get (create-uri "/")))]
     (is (= (:status response) 200))
-    (assert-contains response "class=\"intro\"")))
+    (assert-contains response "<h2>Welcome</h2>")))
