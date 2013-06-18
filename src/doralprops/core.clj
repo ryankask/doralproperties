@@ -1,7 +1,7 @@
 (ns doralprops.core
   (:require [ring.util.response :as response]
-            [ring.adapter.jetty :as jetty]
             [clojure.java.io :as io]
+            [org.httpkit.server :as httpkit]
             [me.raynes.laser :as laser])
   (:use [ring.middleware.params :only [wrap-params]]))
 
@@ -44,4 +44,4 @@
       wrap-error))
 
 (defn -main []
-  (defonce server (jetty/run-jetty app {:port 8088 :join? false})))
+  (defonce server (httpkit/run-server app {:port 8088})))
