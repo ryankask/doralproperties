@@ -13,23 +13,25 @@
     <link href="/static/css/screen.css" media="screen, projection" rel="stylesheet">
   </head>
   <body ng-app="doralProps" ng-controller="AppCtrl">
-    <header>
-      <a href="/"><img src="/static/images/logo/small.jpg" width="84" height="90"
-                       alt="Doral Properties logo"></a>
-      <div class="hgroup">
-        <h1>Doral Properties Real Estate</h1>
-        <h2>Four generations of experience</h2>
-      </div>
-    </header>
-    <nav>
-      <ul dp-nav-menu>
-        <li><a href="/">Home</a></li>
-        <li><a href="/page/about">About</a></li>
-        <li><a href="/page/properties">Properties</a></li>
-        <li><a href="/page/services">Services</a></li>
-        <li><a href="/page/social">Social</a></li>
-      </ul>
-    </nav>
+    <div class="header-wrapper">
+      <header>
+          <a href="/"><img src="/static/images/logo/small.jpg" width="84" height="90"
+                           alt="Doral Properties logo"></a>
+          <div class="hgroup">
+            <h1>Doral Properties Real Estate</h1>
+            <h2>Four generations of experience</h2>
+          </div>
+      </header>
+      <nav>
+        <ul dp-nav-menu>
+          <li><a href="/">Home</a></li>
+          <li><a href="/page/about">About</a></li>
+          <li><a href="/page/properties">Properties</a></li>
+          <li><a href="/page/services">Services</a></li>
+          <li><a href="/page/social">Social</a></li>
+        </ul>
+      </nav>
+    </div>
     <div role="main" ng-view></div>
     <footer>
       © 2013 Doral Properties, Inc.

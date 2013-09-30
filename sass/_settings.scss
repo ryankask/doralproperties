@@ -8,8 +8,10 @@ $body-font-color: #2b2b2b;
 $base-font-size: $normpx;
 $base-line-height: $medpx;
 $link-color: #01127a;
-$nav-bg-color: #cdcdcd;
-$caption-bg-color: $nav-bg-color;
+$header-color: shade(#fff, 8%);
+$header-bg-color: #014d79;
+$header-border-color: shade($header-bg-color, 40%);
+$caption-bg-color: $header-color;
 
 // Borders
 $border-radius: 4px 4px;
