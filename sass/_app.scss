@@ -2,7 +2,6 @@
 @import "compass/css3/border-radius";
 @import "compass/typography/vertical_rhythm";
 @import "susy";
-@import "fonts";
 @import "type";
 
 @include establish-baseline;
@@ -13,7 +12,7 @@ body {
   font-family: $body-font-family;
 }
 
-header, nav, [role=main], footer {
+header, [role=main], footer {
   @include container;
   @include at-breakpoint($break) {
     @include set-container-width;
@@ -26,44 +25,51 @@ header, nav, [role=main], footer {
 }
 
 header {
-  @include padding-leader;
-  @include trailer;
-  text-align: center;
   color: $header-color;
+  text-align: center;
 
   h1 {
-    line-height: 1.15em;
-    margin-bottom: 0;
+    font-size: 1.5em;
+    padding-top: 0.3em;
   }
 
   h2 {
     @include adjust-font-size-to($normpx);
+    font-style: italic;
+  }
+
+  a {
+    text-decoration: none;
+    color: $header-color;
+
+    &:hover {
+      color: $header-color;
+    }
   }
 }
 
 nav {
   ul {
-    // required so border radius clips the "on" link's background color
-    overflow: hidden;
     margin-bottom: 0;
-
-    @include adjust-font-size-to($medpx);
+    @include adjust-font-size-to(22px);
     font-family: $heading-font-family;
+
+    li {
+      display: inline-block;
+    }
 
     a {
       display: block;
-      padding: 0 1em;
-      text-decoration: none;
-      color: $header-color;
+      padding: 0 0.6em;
 
       &:hover, &.on {
-        background-color: $header-border-color;
+        color: shade($header-color, 20%);
       }
     }
   }
 }
 
-[role=main] {
+#main {
   @include leader;
   @include trailer;
   overflow: hidden;
@@ -86,77 +92,29 @@ nav {
       @include trailer;
     }
   }
-
-  .property-location {
-    @include leader;
-    @include trailer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    height: 300px;
-  }
-
-  .social-links {
-    margin-top: 1em;
-
-    img {
-      vertical-align: middle;
-    }
-  }
-
-  .history {
-    clear: right;
-  }
 }
 
 @include at-breakpoint($break) {
   header {
-    overflow: hidden;
-    position: relative;
     text-align: left;
-    white-space: nowrap;
+    height: 60px;
 
-    .hgroup {
-      margin-left: 12px;
-    }
-
-    h1, h2 {
-      margin-left: 5px;
-    }
-
-    img, .hgroup {
-      vertical-align: middle;
+    h1 {
       display: inline-block;
+      vertical-align: bottom;
+      line-height: 60px;
+      padding: 0;
     }
   }
 
-  nav li {
-    float: left;
+  nav {
+    float: right;
+    margin-top: 7px;
 
-    a {
-      @include border-top-radius($border-radius);
-    }
-  }
-
-  [role=main] {
-    .intro-left {
-      @include span-columns(5, $break-columns);
-    }
-
-    .intro-right {
-      @include span-columns(5 omega, $break-columns);
-    }
-
-    .property-location {
-      float: right;
-      margin: 0 0 1em 1em;
-    }
-
-    .caption.about {
-      float: right;
-      margin-left: 1em;
-      width: 50%;
+    li {
+      a {
+        @include border-top-radius($border-radius);
+      }
     }
   }
 }
@@ -165,3 +123,7 @@ footer {
   @include adjust-font-size-to($smallpx);
   clear: both;
 }
+
+@import "components/home";
+@import "components/about";
+@import "components/properties";

@@ -1,0 +1,16 @@
+.property-location {
+  @include leader;
+  @include trailer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+}
+
+@include at-breakpoint($break) {
+  .property-location {
+    float: right;
+    margin: 0 0 1em 1em;
+  }
+}

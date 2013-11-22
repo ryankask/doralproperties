@@ -1,0 +1,24 @@
+.welcome {
+  overflow: hidden;
+}
+
+.social-links {
+  margin-top: 1em;
+
+  img {
+    vertical-align: middle;
+  }
+}
+
+.feature {
+}
+
+@include at-breakpoint($break) {
+  .intro-left {
+    @include span-columns(5, $break-columns);
+  }
+
+  .intro-right {
+    @include span-columns(5 omega, $break-columns);
+  }
+}

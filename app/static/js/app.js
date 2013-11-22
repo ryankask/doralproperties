@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var deps = ['doralProps.controllers', 'doralProps.directives'],
+  var deps = ['ngRoute', 'doralProps.controllers', 'doralProps.directives'],
       app = angular.module('doralProps', deps);
 
   app.config(function($routeProvider, $locationProvider) {

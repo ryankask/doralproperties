@@ -1,0 +1,11 @@
+.history {
+  clear: right;
+}
+
+@include at-breakpoint($break) {
+  .caption.about {
+    float: right;
+    margin-left: 1em;
+    width: 50%;
+  }
+}

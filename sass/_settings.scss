@@ -2,16 +2,16 @@
 
 // Type
 @import "sizes";
-$heading-font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-$body-font-family: "PT Serif", Georgia, Times, "Times New Roman", serif;
+$heading-font-family: Cabin, sans-serif;
+$body-font-family: "Source Sans Pro", sans-serif;
 $body-font-color: #2b2b2b;
 $base-font-size: $normpx;
 $base-line-height: $medpx;
-$link-color: #01127a;
 $header-color: shade(#fff, 8%);
 $header-bg-color: #014d79;
 $header-border-color: shade($header-bg-color, 40%);
 $caption-bg-color: $header-color;
+$link-color: $header-bg-color;
 
 // Borders
 $border-radius: 4px 4px;
