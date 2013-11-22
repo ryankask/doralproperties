@@ -11,6 +11,10 @@
 }
 
 .feature {
+  h2 {
+    display: inline-block;
+    margin-right: 1em;
+  }
 }
 
 @include at-breakpoint($break) {
