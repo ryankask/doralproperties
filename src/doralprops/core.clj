@@ -29,8 +29,9 @@
 (defn handler [request]
   (if (= ((:query-params request) target-param) "")
     (if-let [rendered-html (render (:uri request))]
-     (-> (response/response rendered-html)
-         (response/header "Content-Type" "text/html")))))
+      (response/header
+       (response/response rendered-html)
+       "Content-Type" "text/html"))))
 
 (defn wrap-error [handler]
   (fn [request]
