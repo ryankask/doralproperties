@@ -10,3 +10,4 @@ def deploy():
 
     with cd(env.deploy_path):
         run('git pull')
+        run('grunt')

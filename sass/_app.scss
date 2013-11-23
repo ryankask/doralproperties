@@ -50,8 +50,8 @@ header {
 
 nav {
   ul {
-    margin-bottom: 0;
-    @include adjust-font-size-to(22px);
+    margin: 12px 0 6px 0;
+    font-size: 1.1em;
     font-family: $heading-font-family;
 
     li {
@@ -110,6 +110,10 @@ nav {
   nav {
     float: right;
     margin-top: 7px;
+
+    ul {
+      margin-bottom: 0;
+    }
   }
 }
 
