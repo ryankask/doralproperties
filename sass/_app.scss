@@ -110,12 +110,6 @@ nav {
   nav {
     float: right;
     margin-top: 7px;
-
-    li {
-      a {
-        @include border-top-radius($border-radius);
-      }
-    }
   }
 }
 
