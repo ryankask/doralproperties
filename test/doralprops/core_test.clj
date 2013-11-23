@@ -20,16 +20,16 @@
     (is (= (:status response) 404))))
 
 (deftest request-with-valid-uri-returns-html
-  (let [response (app (request :get (create-uri "/page/services")))]
+  (let [response (app (request :get (create-uri "/page/about")))]
     (is (= (:status response) 200))
-    (assert-contains response "<h1>Services</h1>")))
+    (assert-contains response "<h1>About</h1>")))
 
 (deftest only-file-component-of-uri-tested-for-partial
-  (let [response (app (request :get (create-uri "/page/unknown/services")))]
+  (let [response (app (request :get (create-uri "/page/unknown/about")))]
     (is (= (:status response) 200) "this should return 404 in the future")
-    (assert-contains response "<h1>Services</h1>")))
+    (assert-contains response "<h1>About</h1>")))
 
 (deftest uri-partials-inspected-for-special-partial-paths
   (let [response (app (request :get (create-uri "/")))]
     (is (= (:status response) 200))
-    (assert-contains response "<h2>Welcome</h2>")))
+    (assert-contains response "<h1>Welcome</h1>")))
