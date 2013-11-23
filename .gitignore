@@ -12,3 +12,5 @@ pom.xml
 .lein-env
 .lein-repl-history
 *.js.map
+node_modules
+app/static/js/build.js

@@ -1,0 +1,11 @@
+{
+  "name": "doralproperties",
+  "version": "0.1.0",
+  "description": "The Doral Properties website.",
+  "author": "Ryan Kaskel",
+  "homepage": "https://github.com/ryankask/doralproperties",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0"
+  }
+}
