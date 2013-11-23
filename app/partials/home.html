@@ -1,3 +1,13 @@
+<div id="slides">
+  <img src="/static/images/properties/9690/hi1.jpg" alt="">
+  <img src="/static/images/properties/9690/hi3.jpg" alt="">
+  <img src="/static/images/properties/9690/hi4.jpg" alt="">
+  <img src="/static/images/properties/9690/hi5.jpg" alt="">
+  <img src="/static/images/properties/9690/hi2.jpg" alt="">
+  <img src="/static/images/properties/9690/hi6.jpg" alt="">
+  <img src="/static/images/properties/9690/hi7.jpg" alt="">
+</div>
+
 <div class="welcome">
   <div class="intro-left">
     <h1>Welcome</h1>
@@ -21,13 +31,27 @@
 <div class="feature">
   <h2>Doral Farmers' Market</h2>
   <div class="fb-like" data-href="https://www.facebook.com/DoralFarmersMarket" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+  <p>More information coming soon. Be sure to like us on Facebook!</p>
 </div>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+  (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  }(document, 'script', 'facebook-jssdk'));
+
+  $("#slides").slidesjs({
+    play: {
+      active: true,
+      auto: true,
+      interval: 4000,
+      swap: true,
+      pauseOnHover: true,
+      restartDelay: 2500
+    }
+  });
+</script>
