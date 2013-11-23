@@ -118,8 +118,11 @@ nav {
 }
 
 footer {
-  @include adjust-font-size-to($smallpx);
   clear: both;
+}
+
+small {
+  @include adjust-font-size-to($smallpx);
 }
 
 @import "components/flexslider";
