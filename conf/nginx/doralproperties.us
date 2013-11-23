@@ -5,7 +5,7 @@ server {
     root /home/deploy/apps/doralproperties/app;
     server_name doralproperties.us;
 
-    location ~ ^/(page/\w+/?)?$ {
+    location ~ ^/(page/[-\w]+/?)?$ {
         include proxy_params;
 
         if ($args ~ "_escaped_fragment_=") {

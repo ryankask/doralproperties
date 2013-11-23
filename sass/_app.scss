@@ -12,7 +12,7 @@ body {
   font-family: $body-font-family;
 }
 
-header, [role=main], footer {
+header, #main, footer {
   @include container;
   @include at-breakpoint($break) {
     @include set-container-width;
@@ -72,6 +72,7 @@ nav {
   @include leader;
   @include trailer;
   overflow: hidden;
+  clear: both;
 
   > div {
     @include trailer;
@@ -128,3 +129,4 @@ small {
 @import "components/home";
 @import "components/about";
 @import "components/properties";
+@import "components/farmers-market";

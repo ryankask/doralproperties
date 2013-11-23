@@ -13,6 +13,8 @@
       templateUrl: '/partials/services.html'
     }).when('/page/social', {
       templateUrl: '/partials/social.html'
+    }).when('/page/farmers-market', {
+      templateUrl: '/partials/farmers-market.html'
     }).otherwise({
       templateUrl: '/partials/home.html'
     });

@@ -1,15 +1,8 @@
-#main .flexslider.home {
-  margin-bottom: 3em;
-}
+.twitter-link {
+  display: none;
+  float: right;
 
-.welcome {
-  overflow: hidden;
-}
-
-.social-links {
-  margin-top: 1em;
-
-  img {
+  a, img {
     vertical-align: middle;
   }
 }
@@ -19,14 +12,34 @@
     display: inline-block;
     margin-right: 1em;
   }
+
+  .more {
+    font-size: 1.4em;
+    margin-top: 10px;
+
+    p {
+      margin: 0 0 1em 0;
+    }
+
+    img {
+      margin-bottom: 1em;
+    }
+  }
 }
 
 @include at-breakpoint($break) {
-  .intro-left {
-    @include span-columns(5, $break-columns);
+  .twitter-link {
+    display: inline-block;
   }
 
-  .intro-right {
-    @include span-columns(5 omega, $break-columns);
+  .feature {
+    .farmers-market-banner {
+      float: right;
+      text-align: center;
+    }
+
+    .find-out-more {
+      font-size: 1.4em;
+    }
   }
 }
