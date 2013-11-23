@@ -1,11 +1,13 @@
-<div id="slides">
-  <img src="/static/images/properties/9690/hi1.jpg" alt="">
-  <img src="/static/images/properties/9690/hi3.jpg" alt="">
-  <img src="/static/images/properties/9690/hi4.jpg" alt="">
-  <img src="/static/images/properties/9690/hi5.jpg" alt="">
-  <img src="/static/images/properties/9690/hi2.jpg" alt="">
-  <img src="/static/images/properties/9690/hi6.jpg" alt="">
-  <img src="/static/images/properties/9690/hi7.jpg" alt="">
+<div class="flexslider home">
+  <ul class="slides">
+    <li><img src="/static/images/properties/9690/hi1.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi3.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi4.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi5.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi2.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi6.jpg" alt=""></li>
+    <li><img src="/static/images/properties/9690/hi7.jpg" alt=""></li>
+  </ul>
 </div>
 
 <div class="welcome">
@@ -44,14 +46,7 @@
   fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-  $("#slides").slidesjs({
-    play: {
-      active: true,
-      auto: true,
-      interval: 4000,
-      swap: true,
-      pauseOnHover: true,
-      restartDelay: 2500
-    }
+  $('.flexslider').flexslider({
+    animation: 'slide'
   });
 </script>

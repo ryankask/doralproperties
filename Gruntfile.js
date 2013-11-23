@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'app/static/js/vendor/jquery-2.0.3.min.js',
-          'app/static/js/vendor/jquery.slides.min.js',
+          'app/static/js/vendor/jquery.flexslider.min.js',
           'app/static/js/vendor/angular.min.js',
           'app/static/js/vendor/angular-route.min.js',
           'app/static/js/vendor/angular-animate.min.js',
