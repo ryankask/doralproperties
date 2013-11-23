@@ -18,9 +18,19 @@ module.exports = function(grunt) {
         ],
         dest: 'app/static/js/build.js'
       }
+    },
+    watch: {
+      scrits: {
+        files: ['app/static/**/*.js'],
+        tasks: ['concat'],
+        options: {
+          spawn: false
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.registerTask('default', ['concat']);
 };
