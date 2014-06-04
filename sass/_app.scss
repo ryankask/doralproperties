@@ -72,7 +72,6 @@ nav {
   @include leader;
   @include trailer;
   overflow: hidden;
-  clear: both;
 
   > div {
     @include trailer;
@@ -98,9 +97,10 @@ nav {
   header {
     text-align: left;
     height: 60px;
+    overflow: hidden;
 
     h1 {
-      display: inline-block;
+      float: left;
       vertical-align: bottom;
       line-height: 60px;
       padding: 0;
