@@ -1,32 +1,28 @@
-(function() {
-  'use strict';
+var directives = angular.module('doralProps.directives', []);
 
-  var directives = angular.module('doralProps.directives', []);
+directives.directive('dpNavMenu', function($location) {
+  return function(scope, element, attrs) {
+    var links = element.find('a'),
+    link,
+    currentLink,
+    urlMap = {},
+    i;
 
-  directives.directive('dpNavMenu', function($location) {
-    return function(scope, element, attrs) {
-      var links = element.find('a'),
-          link,
-          currentLink,
-          urlMap = {},
-          i;
+    for (i = 0; i < links.length; i++) {
+      link = angular.element(links[i]);
+      urlMap[link.attr('href')] = link;
+    }
 
-      for (i = 0; i < links.length; i++) {
-        link = angular.element(links[i]);
-        urlMap[link.attr('href')] = link;
-      }
+    scope.$on('$routeChangeStart', function() {
+      var pathLink = urlMap[$location.path()];
 
-      scope.$on('$routeChangeStart', function() {
-        var pathLink = urlMap[$location.path()];
-
-        if (pathLink) {
-          if (currentLink) {
-            currentLink.removeClass('on');
-          }
-          currentLink = pathLink;
-          currentLink.addClass('on');
+      if (pathLink) {
+        if (currentLink) {
+          currentLink.removeClass('on');
         }
-      });
-    };
-  });
-})();
+        currentLink = pathLink;
+        currentLink.addClass('on');
+      }
+    });
+  };
+});

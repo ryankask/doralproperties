@@ -1,12 +1,22 @@
 {
   "name": "doralproperties",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The Doral Properties website.",
   "author": "Ryan Kaskel",
-  "homepage": "https://github.com/ryankask/doralproperties",
+  "repository": "https://github.com/ryankask/doralproperties",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-watch": "~0.5.3"
+    "browserify": "^4.1.8",
+    "browserify-shim": "^3.5.0",
+    "gulp": "^3.7.0",
+    "gulp-ruby-sass": "^0.5.0",
+    "gulp-util": "^2.2.16",
+    "http-server": "^0.6.1",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^0.10.2"
+  },
+  "dependencies": {
+    "angular": "^1.2.16",
+    "angular-route": "^1.2.17-build.163.1",
+    "jquery": "^2.1.1"
   }
 }

@@ -13,4 +13,4 @@ pom.xml
 .lein-repl-history
 *.js.map
 node_modules
-app/static/js/build.js
+/app/dist
