@@ -1,6 +1,6 @@
 from fabric.api import env, require, cd, run
 
-env.hosts = ['doralproperties.us']
+env.hosts = ['doral.properties']
 env.user = 'deploy'
 env.deploy_path = '~/apps/doralproperties'
 
