@@ -64,10 +64,20 @@ function startHttpServer() {
 
   server = httpServer.createServer({
     root: 'app',
-    cache: -1
+    cache: -1,
+    before: [pageMiddleware]
   });
 
   server.listen(8080, '127.0.0.1', function() {
     gutil.log(bracketed(gutil.colors.green('Dev HTTP Server')), 'running on port 8080');
   });
+}
+
+function pageMiddleware(req, res, next) {
+  // Treat all requests for "/page/xyz" as requests for "/" since the routing
+  // is handled by ngRoute
+  if (/^\/page\/\w+$/.test(req.url)) {
+    req.url = '/';
+  }
+  next();
 }
