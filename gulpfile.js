@@ -23,7 +23,7 @@ gulp.task('develop', ['styles', 'watch'], function() {
   startHttpServer();
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['styles', 'browserify']);
 
 // Helpers
 
