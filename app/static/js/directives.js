@@ -26,3 +26,26 @@ directives.directive('dpNavMenu', function($location) {
     });
   };
 });
+
+directives.directive('dpPageBanner', function($route) {
+  return {
+    restrict: 'E',
+    templateUrl: '/partials/page-banner.html',
+    link:function(scope, element, attrs) {
+      element.addClass('page-banner');
+
+      scope.$on('$viewContentLoaded', function() {
+        var pageBannerUrl = $route.current.pageBannerUrl;
+
+        if (pageBannerUrl) {
+          element.css({
+            display: 'block',
+            backgroundImage: 'url(' + pageBannerUrl + ')'
+          });
+        } else {
+          element.hide();
+        }
+      });
+    }
+  };
+});

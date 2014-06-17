@@ -12,7 +12,7 @@ body {
   font-family: $body-font-family;
 }
 
-header, #main, footer {
+header, #main, footer, .container {
   @include container;
   @include at-breakpoint($break) {
     @include set-container-width;
@@ -126,6 +126,7 @@ small {
 }
 
 @import "components/flexslider";
+@import "components/banner";
 @import "components/home";
 @import "components/about";
 @import "components/properties";

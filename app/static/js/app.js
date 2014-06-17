@@ -16,14 +16,11 @@ app.config(function($routeProvider, $locationProvider) {
     templateUrl: '/partials/about.html'
   }).when('/page/properties', {
     templateUrl: '/partials/properties.html'
-  }).when('/page/services', {
-    templateUrl: '/partials/services.html'
-  }).when('/page/social', {
-    templateUrl: '/partials/social.html'
   }).when('/page/farmers-market', {
     templateUrl: '/partials/farmers-market.html'
   }).otherwise({
-    templateUrl: '/partials/home.html'
+    templateUrl: '/partials/home.html',
+    pageBannerUrl: '/static/images/properties/9690/hi2.jpg'
   });
 
   $locationProvider.html5Mode(true);
