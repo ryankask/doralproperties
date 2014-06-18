@@ -62,7 +62,7 @@ function gulpBrowserify(config) {
 function startHttpServer() {
   var httpServer = require('http-server');
 
-  server = httpServer.createServer({
+  var server = httpServer.createServer({
     root: 'app',
     cache: -1,
     before: [pageMiddleware]
@@ -76,7 +76,7 @@ function startHttpServer() {
 function pageMiddleware(req, res, next) {
   // Treat all requests for "/page/xyz" as requests for "/" since the routing
   // is handled by ngRoute
-  if (/^\/page\/\w+$/.test(req.url)) {
+  if (/^\/page\/[-\w]+$/.test(req.url)) {
     req.url = '/';
   }
   next();
