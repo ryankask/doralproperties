@@ -1,20 +1,20 @@
 var directives = angular.module('doralProps.directives', []);
 
-directives.directive('dpNavMenu', function($location) {
-  return function(scope, element, attrs) {
+directives.directive('dpNavMenu', function() {
+  return function(scope, element) {
     var links = element.find('a'),
     link,
     currentLink,
-    urlMap = {},
+    stateLinkMap = {},
     i;
 
     for (i = 0; i < links.length; i++) {
       link = angular.element(links[i]);
-      urlMap[link.attr('href')] = link;
+      stateLinkMap[link.attr('ui-sref')] = link;
     }
 
-    scope.$on('$routeChangeStart', function() {
-      var pathLink = urlMap[$location.path()];
+    scope.$on('$stateChangeSuccess', function(event, toState) {
+      var pathLink = stateLinkMap[toState.name];
 
       if (pathLink) {
         if (currentLink) {
@@ -27,20 +27,18 @@ directives.directive('dpNavMenu', function($location) {
   };
 });
 
-directives.directive('dpPageBanner', function($route) {
+directives.directive('dpPageBanner', function() {
   return {
     restrict: 'E',
     templateUrl: '/partials/page-banner.html',
     link:function(scope, element, attrs) {
       element.addClass('page-banner');
 
-      scope.$on('$viewContentLoaded', function() {
-        var pageBannerUrl = $route.current.pageBannerUrl;
-
-        if (pageBannerUrl) {
+      scope.$on('$stateChangeSuccess', function(event, toState) {
+        if (toState.data && toState.data.pageBannerUrl) {
           element.css({
             display: 'block',
-            backgroundImage: 'url(' + pageBannerUrl + ')'
+            backgroundImage: 'url(' + toState.data.pageBannerUrl + ')'
           });
         } else {
           element.hide();
