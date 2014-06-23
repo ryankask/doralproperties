@@ -14,10 +14,7 @@ var app = angular.module('doralProps', [
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider.state('home', {
     url: '/',
-    templateUrl: '/partials/home.html',
-    data: {
-      pageBannerUrl: '/static/images/properties/9690/hi2.jpg'
-    }
+    templateUrl: '/partials/home.html'
   }).state('about', {
     url: '/page/about',
     templateUrl: '/partials/about.html'
