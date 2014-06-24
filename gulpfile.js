@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-ruby-sass');
 var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var isProduction = process.env.NODE_ENV === 'production';
 
 gulp.task('styles', function() {
   return gulp.src('sass/screen.scss')
@@ -14,14 +16,26 @@ gulp.task('browserify', function() {
   return gulpBrowserify();
 });
 
+gulp.task('uglify', ['browserify'], function() {
+  return gulp.src('app/dist/bundle.js')
+    .pipe(uglify({
+      mangle: false
+    }))
+    .pipe(gulp.dest('app/dist'));
+});
+
 gulp.task('watch', function() {
   gulpBrowserify({ isWatching: true });
   gulp.watch('sass/**/*.scss', ['styles']);
 });
 
-gulp.task('develop', ['styles', 'watch'], function() {
+gulp.task('devserver', [], function() {
   startHttpServer();
-});
+})
+
+gulp.task('develop', ['styles', 'watch', 'devserver']);
+
+gulp.task('build', ['styles', 'uglify']);
 
 gulp.task('default', ['styles', 'browserify']);
 
